@@ -1,5 +1,5 @@
 # CNN vs. GCNN for Rotated MNIST Classification
-
+Sean Yu, Ziqing Lin
 This repository contains the results and analysis of experiments comparing Convolutional Neural Networks (CNNs) with Graph Convolutional Neural Networks (GCNNs) in the context of classifying rotated MNIST digits.
 ## Overview
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
