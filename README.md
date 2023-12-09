@@ -27,7 +27,14 @@ Both the accuracy curve and the loss curve have shown a clear trend between CNN 
 ![gcnn-test-loss-60k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/ca0f8c32-6bc7-4040-be5c-6d09bcf247da)
 
 
-- **Cost-Effectiveness of GCNN:** 
+- **Cost-Effectiveness of GCNN:**  By comparing the test accuracy of a Graph Convolutional Neural Network (GCNN) trained with 10k, 30k, and 60k data instances over 10 epochs, it is observed that there is a clear correlation between dataset size and model performance. The larger the datasets the faster and higher the accuracy across all degrees of rotation.
+
+For 10k dataset, GCNN model initially shows a steep learning curve from epoch 1 to epoch 4, after epoch 4, the test accuracy starts to plateau, with only slight improvements or variations up to epoch 10.
+For 30k dataset, shows a steeper learning curve, suggesting that the model learns more effectively than the 10k dataset. After epoch 4, GCNN reaches plateau with most degrees reaching over 80% accuracy.
+For 60k dataset,  GCNN model shows the steepest learning curve, and reaches the highest accuracy with most lines surpassing 90% accuracy.
+![gcnn-test-loss-10k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/f8e990f5-28cf-464f-8ce3-2d5355df4e1f)
+![gcnn-test-loss-30k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/c18aad63-7416-41ef-a179-3f5800157c2a)
+![gcnn-test-accuracy-60k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/011bdd00-28b0-4547-b970-27f032456ff0)
 
 
 ## Discussion
@@ -37,7 +44,7 @@ Both the accuracy curve and the loss curve have shown a clear trend between CNN 
   - With 10,000 samples, both models displayed varying accuracies, with some lines reaching or exceeding 80%.
   - Using 30,000 samples, the accuracies generally improved, with a majority falling between 80% and 90%.
   - With the full 60,000-sample dataset, both models excelled, with most lines surpassing 90% accuracy. GCNN proved cost-effective with reduced datasets.
-  - 
+    
 Our findings suggest that GCNN holds an advantage over CNN in handling rotated images, potentially impacting various computer vision tasks. The observed fluctuations in GCNN's accuracy call for further investigation and fine-tuning strategies.
 
 In terms of cost-effectiveness, GCNN's ability to maintain high accuracy with reduced datasets can reduce data acquisition costs and computational requirements.
