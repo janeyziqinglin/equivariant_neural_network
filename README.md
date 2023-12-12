@@ -34,6 +34,7 @@ At 180 degrees of rotation, both models experience an increase in accuracy compa
 At 360 degrees of rotation, the performance gap between CNN and GCNN further narrows with GCNN having overall accuracy above 0.9, while CNN accuracy is  above 0.8 . GCNN still have better overall accuracy than CNN, but at the beginning, CNN displays higher accuracy than  the accuracy of GCNN. 
 ![360](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/9e8762ca-0322-4622-ba67-3baa8e16d5bc)
 
+
 <!-- 
 <div style="display: flex;">
     <img src="https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/ab34b3c1-435c-46e2-9bcf-3a4794cabbcf" alt="Image 1" width="33%">
