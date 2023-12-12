@@ -21,7 +21,15 @@ The following plots compare the test accuracy of a Convolutional Neural Network 
 ![cnn-test-accuracy-60k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/4d30b121-7331-4320-a1ff-37ebbec80e20)
 ![gcnn-test-accuracy-60k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/5afd8234-44fe-4aea-ae95-06f223db8c1c)
 
-- **Accuracy Comparison between CNN and GCNN:** GCNN consistently displays lower loss compared to CNN when classifying rotated MNIST digits. Similar to the results of accuracy, the test loss for CNN decreases as epochs increase, which is the opposite trend as the accuracy. This is expected since loss can be viewed as the deviation between the true values and the predicted values, the lower the loss, the smaller the error, thus higher the accuracy. In addition, it is also found that there is no clear trend of how GCNN's performance varies with the degree of rotation.
+The following figure under varying degrees of rotation (30, 180, and 360 degrees) is plotted to further compare the accuracy between CNN and GCNN. 
+
+At 30 degrees of rotation, the accuracy of GCNN is significantly higher than that of CNN, indicating that GCNN has better rotational invariance compared to CNN. The gap between the two models is large, with GCNN having accuracy above 0.8, while CNN accuracy is  above 0.4.
+
+At 180 degrees of rotation, both models experience an increase in accuracy compared to the 30 degrees scenario, but the increase is more prominent for the CNN. The gap between the two models starts to shrink, indicating that as the degree of rotation increases, with GCNN having accuracy above 0.8, while CNN accuracy is  above 0.7 , CNN's performance increase at a faster rate than GCNN. GCNN also shows a notable dip in performance around the midpoint of the epochs, but it recovers towards the end.
+
+At 360 degrees of rotation, the performance gap between CNN and GCNN further narrows with GCNN having overall accuracy above 0.9, while CNN accuracy is  above 0.8 . GCNN still have better overall accuracy than CNN, but at the beginning, CNN displays higher accuracy than  the accuracy of GCNN. 
+
+- **Loss Comparison between CNN and GCNN:** GCNN consistently displays lower loss compared to CNN when classifying rotated MNIST digits. Similar to the results of accuracy, the test loss for CNN decreases as epochs increase, which is the opposite trend as the accuracy. This is expected since loss can be viewed as the deviation between the true values and the predicted values, the lower the loss, the smaller the error, thus higher the accuracy. In addition, it is also found that there is no clear trend of how GCNN's performance varies with the degree of rotation.
 
 Both the accuracy curve and the loss curve have shown a clear trend between CNN and the degree of rotation and a lack of trend for the GCNN model. 
 ![cnn-test-loss-60k](https://github.com/janeyziqinglin/equivariant_neural_network/assets/105125897/1ddb34aa-8d74-4cb2-9aab-ff01cf0f8bc8)
@@ -39,18 +47,17 @@ For 60k dataset,  GCNN model shows the steepest learning curve, and reaches the 
 
 
 ## Discussion
-- **Stability vs. Fluctuation:** CNN's test accuracy remained stable across different degrees of rotation, while GCNN's accuracy showed more fluctuation, indicating potential flexibility but occasional performance variations.
+- **Accuracy Comparison**  The results suggest that while GCNN generally outperforms CNN in terms of accuracy, especially with lower degrees of rotation, the performance advantage of GCNN diminishes as the degree of rotation increases. This is because of the design of GCNN as discussed in introduction, allowing it to learn and generalize better than CNN, leading to higher test accuracy. On the other hand, CNN's performance, while lower at low degree of rotation, shows more statbility over epoch. CNN's test accuracy remained stable across different epoch, while GCNN's accuracy showed more fluctuation, indicating potential flexibility but occasional performance variations.
 
 - **Cost-Effectiveness:** Both models were evaluated on subsets of the MNIST dataset:
   - With 10,000 samples, both models displayed varying accuracies, with some lines reaching or exceeding 80%.
   - Using 30,000 samples, the accuracies generally improved, with a majority falling between 80% and 90%.
   - With the full 60,000-sample dataset, both models excelled, with most lines surpassing 90% accuracy. GCNN proved cost-effective with reduced datasets.
-    
-Our findings suggest that GCNN holds an advantage over CNN in handling rotated images, potentially impacting various computer vision tasks. The observed fluctuations in GCNN's accuracy call for further investigation and fine-tuning strategies.
 
-In terms of cost-effectiveness, GCNN's ability to maintain high accuracy with reduced datasets can reduce data acquisition costs and computational requirements.
 
-Future work may involve comparing results with existing state-of-the-art approaches, mitigating performance fluctuations in GCNN, and optimizing the model's architecture for rotated image tasks.
+To summarize, GCNN has a significant advantage over CNN at lower degrees of rotation due to its ability to leverage the geometric structure of the data. However, as the degree of rotation increases in the training data, the advantage of GCNN diminishes. In terms of cost-effectiveness, GCNN's ability to maintain high accuracy with reduced datasets can reduce data acquisition costs and computational requirements. Future work can be done by  mitigating performance fluctuations in GCNN by hyperparameter tuning, and optimizing the model's architecture for rotated image tasks.
+Last but not least, this study have shed light to model selection in real world application. When dealing with complicated medical images rather than simple MNIST data, it is likely that GCNNs might be more adept due to their ability to exploit relational or geometric structure, additionally, GCNNs might require less data to achieve high performance. However, CNNs might perform equally well by preprocessing the training data to include the expected variations in the test data, e.g. rotations.
+
 
 
 
