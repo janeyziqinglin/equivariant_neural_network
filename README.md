@@ -119,5 +119,6 @@ Last but not least, this study have shed light to model selection in real world 
 ## References
 
 University of Amsterdam Group Convolution Tutorial
+
 https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/DL2/Geometric_deep_learning/tutorial1_regular_group_convolutions.html
 
