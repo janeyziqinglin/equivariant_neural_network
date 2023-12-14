@@ -115,6 +115,7 @@ To summarize, Group CNN has a significant advantage over CNN at lower degrees of
 's ability to maintain high accuracy with reduced datasets can reduce data acquisition costs and computational requirements. Future work can be done by  mitigating performance fluctuations in Group CNN by hyperparameter tuning, and optimizing the model's architecture for rotated image tasks.
 Last but not least, this study have shed light to model selection in real world application. When dealing with complicated medical images rather than simple MNIST data, it is likely that Group CNNs might be more adept due to their ability to exploit relational or geometric structure, additionally, Group CNNs might require less data to achieve high performance. However, CNNs might perform equally well by preprocessing the training data to include the expected variations in the test data, e.g. rotations.
 
+Another further study could be on steerable neural networks which is an improvement on the Group CNN. The group CNN architecture is limited by the number of group representations that are chosen. For example, in the experiment above 4 representations of rotations were chosen (0, 90, 180, 270 degrees). In steerable neural networks, features are described using a continuous representation, eliminating limitations on the choice of number of representations.
 
 ## References
 
